@@ -4,10 +4,10 @@ This project is a React website designed to interact with a Node.js server. It i
 
 ## Project Structure
 - `/src/components`
-  - `Home.js`: Component displaying business details like name, logo, address, and phone number.
-  - `AdminLogin.js`: Component for admin login with username and password inputs.
-  - `AdminDashboard.js`: Component for admin dashboard with sections for service, order, and customer details.
-  - `UserDashboard.js`: Component for user dashboard with sections for placing an order.
+  - `Home.jsx`: Component displaying business details like name, logo, address, and phone number.
+  - `AdminLogin.jsx`: Component for admin login with username and password inputs.
+  - `AdminDashboard.jsx`: Component for admin dashboard with sections for service, order, and customer details.
+  - `UserDashboard.jsx`: Component for user dashboard with sections for placing an order.
 
 ## Dependencies
 - [PrimeReact](https://www.primefaces.org/primereact/): UI components library.
