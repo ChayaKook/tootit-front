@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/logo.jpg';
 import './App.css';
+import Home from './components/home/home.compoennt';
+import reportWebVitals from './reportWebVitals';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdminDashboard from './components/admin-dashboard/adminDashboard';
+import UserDashboard from './components/user-dashboard/userDashboard';
+import LoginForm from './components/login-form/loginForm.component';
+import ProductsList from './components/products-list/productsList.component';
+import ReactDOM from "react-dom/client";
+import NotFoundComponent from './components/not-found/notFound.component';
+import { Toolbar } from 'primereact/toolbar';
+import CustomToolbar from './components/tool-bar/toolBar.component';
+import Order from './components/order/order.component';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <CustomToolbar></CustomToolbar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="admin" element={<AdminDashboard />} />
+        <Route path="user" element={<UserDashboard />} />
+        <Route path="login" element={<LoginForm />} />
+        <Route path="products" element={<ProductsList />} />
+        <Route path="order" element={<Order />} />
+
+
+        <Route path="*" element={<NotFoundComponent />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+// function App() {
+//   return (
+//     <div className="App">
+//       <Home></Home>
+//     </div>
+//   );
+// }
 
 export default App;
