@@ -1,9 +1,11 @@
+import { OrderModel } from "../interfaces/order.interface";
+
 const API = "http://localhost:8080"
 
 
 export const OrderService = {
 
-    addOrder: async (order: any): Promise<any> => {
+    addOrder: async (order: OrderModel): Promise<OrderModel|any> => {
 
         try {
             const response = await fetch(`${API}/orders`, {

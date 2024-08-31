@@ -17,6 +17,8 @@ const ProductService = {
         });
         if (response.ok) {
             const data = await response.json();
+            console.log(data[0]);
+            
             return data;
         } else {
             console.log('Failed to fetch products');

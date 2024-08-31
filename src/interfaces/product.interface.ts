@@ -1,6 +1,5 @@
 export interface ProductModel {
-    id?: string;
-    code: string;
+    _id?: string;
     name: string;
     description: string;
     image: string;

@@ -5,9 +5,10 @@ export interface OrderModel {
       phone: string,
       email: string
     };
-    products: string;
+    product: string;
     quantity: number;
     totalSum: number;
     status: string;
     date: Date;
+    note: string;
 }

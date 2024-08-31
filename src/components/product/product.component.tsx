@@ -32,8 +32,7 @@ const Product = ({  data }: {  data: ProductModel }) => {
     // };
 
     const product = {
-        id: data.id,
-        code: "569",
+        _id: data._id,
         name: data.name,
         description: data.description,
         image: data.image,
@@ -51,7 +50,7 @@ const Product = ({  data }: {  data: ProductModel }) => {
 
     return (
         <div style={{ backgroundColor: "#f3f0e7", margin: "10px", padding: "10px", display: "inline-flex" }}>
-            <div key={product.id}>
+            <div key={product._id}>
                 <div>
                     <img style={{ width: "200px", height: "200px" }} src={`${product.image}`} alt={product.name} />
                     <div>
