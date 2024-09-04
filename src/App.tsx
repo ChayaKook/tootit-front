@@ -34,9 +34,6 @@ function App() {
         <Route path="order" element={<Order />} />
         <Route path="orderslist" element={<OrdersList />} />
         <Route path="contact" element={<ContactComponent />} />
-
-
-
         <Route path="*" element={<NotFoundComponent />} />
       </Routes>
     </BrowserRouter>

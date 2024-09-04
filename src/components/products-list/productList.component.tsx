@@ -30,15 +30,13 @@ const ProductsList: React.FC = () => {
     }
 
     const onRowEditComplete = (rowData: OrderModel|any) => {
-        
         ProductService.updateProduct(rowData).then((updatedProduct) => {
             const updatePproduct = products.map(p => p._id === updatedProduct._id ? updatedProduct : p);
             setProducts(updatePproduct);
             showSuccess();
         }).catch((error) => {
             showError();
-            console.log(error);
-            
+            console.log(error);           
         });
     };
 
@@ -56,6 +54,8 @@ const ProductsList: React.FC = () => {
 
         }
     }
+
+    const addProduct = (product:ProductModel) => {}
 
     const columns = [
         { field: '_id', header: 'מזהה מוצר', type:'text',sort:false   },
@@ -76,6 +76,7 @@ const ProductsList: React.FC = () => {
                 <DynamicTable
                     list={products}
                     columns={columns}
+                    addItem={addProduct}
                     onRowEditComplete={onRowEditComplete}
                     handleDelete={handleDelete}
                     crud={[true, true, true, true]}

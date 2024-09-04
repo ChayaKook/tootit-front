@@ -90,11 +90,11 @@ const BusinessDetails: React.FC = () => {
                     <br />
                     <div>
                         <label>מנהל:</label>
-                        {editing ? (
-                            <InputText value={businessDetails.admin.name} onChange={(e) => handleInputChange('admin', e.target.value)} />
-                        ) : (
+                        {/* {editing ? (
+                            <InputText required value={businessDetails.admin.name}} />
+                        ) : ( */}
                             <span>{businessDetails.admin.name}</span>
-                        )}
+                        {/* )} */}
                     </div>
                     <br />
                     {editing ? (

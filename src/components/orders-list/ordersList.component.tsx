@@ -193,7 +193,9 @@ const OrdersList: React.FC = () => {
 
         }
     }
-// sortable
+
+    const addOreder=(order:OrderModel)=>{}
+
     const columns = [
         { field: '_id', header: 'מזהה הזמנה', type:'text',sort:false },
         { field: 'user.name', header: 'שם הלקוח', type:'text',sort:true   },
@@ -214,6 +216,7 @@ const OrdersList: React.FC = () => {
                 <DynamicTable
                     list={orders}
                     columns={columns}
+                    addItem={addOreder}
                     onRowEditComplete={onRowEditComplete}
                     handleDelete={handleDelete}
                     crud={[true, true, true, true]}

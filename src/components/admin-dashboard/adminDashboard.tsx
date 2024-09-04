@@ -10,7 +10,7 @@ import ProductsList from '../products-list/productList.component';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('orders'); // Default active tab
-
+  
   const navigate = useNavigate();
 
   const checkAuth = async () => {
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
     <div>
       {/* <h1>ברוך שובך, מנהל</h1> */}
       <div className="card">
-        <TabMenu model={items} activeIndex={activeIndex} onTabChange={handleTabChange} />
+        <TabMenu defaultValue={"הזמנות"} model={items} activeIndex={activeIndex} onTabChange={handleTabChange} />
       </div>
       {activeTab === 'הזמנות' && <OrdersList />}
       {activeTab === 'פרטי העסק' && <BusinessDetails />}

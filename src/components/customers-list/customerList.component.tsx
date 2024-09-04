@@ -91,6 +91,7 @@ const CustomerList: React.FC = () => {
                 <DynamicTable
                     list={orders}
                     columns={columns}
+                    addItem={null}
                     onRowEditComplete={onRowEditComplete}
                     handleDelete={handleDelete}
                     crud={[false, true, false, false]}
