@@ -10,12 +10,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminDashboard from './components/admin-dashboard/adminDashboard';
 import UserDashboard from './components/user-dashboard/userDashboard';
 import LoginForm from './components/login-form/loginForm.component';
-import ProductsList from './components/products-list/productsList.component';
+import ProductsList from './components/products/productsList.component';
 import ReactDOM from "react-dom/client";
 import NotFoundComponent from './components/not-found/notFound.component';
 import { Toolbar } from 'primereact/toolbar';
 import CustomToolbar from './components/tool-bar/toolBar.component';
 import Order from './components/order/order.component';
+import OrdersList from './components/orders-list/ordersList.component';
+import ContactComponent from './components/contact/contact.component';
+
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
         <Route path="login" element={<LoginForm />} />
         <Route path="products" element={<ProductsList />} />
         <Route path="order" element={<Order />} />
+        <Route path="orderslist" element={<OrdersList />} />
+        <Route path="contact" element={<ContactComponent />} />
+
 
 
         <Route path="*" element={<NotFoundComponent />} />
@@ -36,12 +42,5 @@ function App() {
     </BrowserRouter>
   );
 }
-// function App() {
-//   return (
-//     <div className="App">
-//       <Home></Home>
-//     </div>
-//   );
-// }
 
 export default App;

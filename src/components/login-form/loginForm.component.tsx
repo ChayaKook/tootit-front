@@ -5,18 +5,20 @@ import { InputNumber } from 'primereact/inputnumber';
 
 import { Button } from 'primereact/button';
 import AuthService from '../../services/auth.service';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         AuthService.login({ email, password }).then((data) => {
             if(data === true) {
-                return <Navigate to="/admin" />;
+                navigate("/admin")
             }
         })
     };

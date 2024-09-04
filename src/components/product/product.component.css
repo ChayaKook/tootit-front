@@ -1,0 +1,7 @@
+#ima{
+    background-image: "../../assets/logo.jpg"
+}
+#ima{
+    background-image: url("../../assets/logo.jpg");
+    width: 50px;
+}

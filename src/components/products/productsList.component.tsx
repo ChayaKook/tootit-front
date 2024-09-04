@@ -11,7 +11,7 @@ import Product from '../product/product.component';
 import { ProductModel } from '../../interfaces/product.interface'
 
 
-export default function BasicDemo() {
+export default function Products() {
     const [products, setProducts] = useState<ProductModel[]>([]);
     const [layout, setLayout] = useState('grid');
 
@@ -23,7 +23,7 @@ export default function BasicDemo() {
         if (!items || items.length === 0) return [];
 
         return items.map((product, index) => {
-            return <Product data={product} />;
+            return <Product data={product} sale={false} />;
         });
     };
 
