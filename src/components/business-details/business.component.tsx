@@ -56,59 +56,62 @@ const BusinessDetails: React.FC = () => {
     };
 
     return (
-        <div>
-            <Toast ref={toast} />
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign:"center"}}>
+            <div style={{ width: "50%", direction: "rtl", backgroundColor: "#fff6fb", borderRadius: "10%", display: "flex", flexDirection: "column", alignItems: "center", marginTop: "4%" }}>
+                <Toast ref={toast} />
+                <h1 style={{ textAlign: "center" }}>פרטי העסק</h1>
 
-            {businessDetails ? (
-                <div>
+                {businessDetails ? (
                     <div>
-                        <label>שם העסק:</label>
-                        {editing ? (
-                            <InputText value={businessDetails.name!} onChange={(e) => handleInputChange('name', e.target.value)} />
-                        ) : (
-                            <span>{businessDetails.name}</span>
-                        )}
-                    </div>
-                    <br />
-                    <div>
-                        <label>טלפון:</label>
-                        {editing ? (
-                            <InputText value={businessDetails.phone!} onChange={(e) => handleInputChange('phone', e.target.value)} />
-                        ) : (
-                            <span>{businessDetails.phone!}</span>
-                        )}
-                    </div>
-                    <br />
-                    <div>
-                        <label>כתובת:</label>
-                        {editing ? (
-                            <InputText value={businessDetails.address} onChange={(e) => handleInputChange('address', e.target.value)} />
-                        ) : (
-                            <span>{businessDetails.address}</span>
-                        )}
-                    </div>
-                    <br />
-                    <div>
-                        <label>מנהל:</label>
-                        {/* {editing ? (
+                        <div>
+                            <label>שם העסק: </label>
+                            {editing ? (
+                                <InputText value={businessDetails.name!} onChange={(e) => handleInputChange('name', e.target.value)} />
+                            ) : (
+                                <span>{businessDetails.name}</span>
+                            )}
+                        </div>
+                        <br />
+                        <div>
+                            <label>טלפון: </label>
+                            {editing ? (
+                                <InputText value={businessDetails.phone!} onChange={(e) => handleInputChange('phone', e.target.value)} />
+                            ) : (
+                                <span>{businessDetails.phone!}</span>
+                            )}
+                        </div>
+                        <br />
+                        <div>
+                            <label>כתובת: </label>
+                            {editing ? (
+                                <InputText value={businessDetails.address} onChange={(e) => handleInputChange('address', e.target.value)} />
+                            ) : (
+                                <span>{businessDetails.address}</span>
+                            )}
+                        </div>
+                        <br />
+                        <div>
+                            <label>מנהל: </label>
+                            {/* {editing ? (
                             <InputText required value={businessDetails.admin.name}} />
                         ) : ( */}
                             <span>{businessDetails.admin.name}</span>
-                        {/* )} */}
+                            {/* )} */}
+                        </div>
+                        <br />
+                        {editing ? (
+                            <Button label="שמירה" onClick={handleSave} />
+                        ) : (
+                            <Button label="עריכה" onClick={handleEdit} />
+                        )}
                     </div>
-                    <br />
-                    {editing ? (
-                        <Button label="שמירה" onClick={handleSave} />
-                    ) : (
-                        <Button label="עריכה" onClick={handleEdit} />
-                    )}
-                </div>
-            ) : (
-                <div className="card flex justify-content-center" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                    <p>טוען את פרטי העסק</p>
-                    <ProgressSpinner />
-                </div>
-            )}
+                ) : (
+                    <div className="card flex justify-content-center" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+                        <p>טוען את פרטי העסק</p>
+                        <ProgressSpinner />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

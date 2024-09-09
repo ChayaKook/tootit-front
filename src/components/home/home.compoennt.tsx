@@ -28,11 +28,14 @@ const Home = () => {
     }, []);
 
     return (
-        <div style={{ backgroundColor: "#fff6fb", marginTop: "5%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-            <img src={tootit} className="App-logo" alt="logo" style={{ width: "300px", height: "300px" }} />
-            <Panel header={businessDetails?.name}
+        <div style={{ backgroundColor: "#fff6fb", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height: "750px" }}>
+            <div style={{marginLeft: "5%"}}>
+                <h1>{businessDetails?.name}</h1>
+                <img src={tootit} className="App-logo" alt="logo" style={{ width: "300px", height: "300px" }} />
+            </div>
+            <Panel header="עלינו..."
                 style={{ width: "30%", textAlign: "center", borderRadius: "13%" }}>
-                <p>קינוחי פירות אקסלוסיביים מהשורה הראשונה</p>
+                <p>קינוחי פירות אקסלוסיביים  </p>
                 <p>  יצירות מופת של שפים מהשורה הראשונה</p>
                 <p>  לאירועי יוקרה, ולכל מי שתרצו לכבד</p>
                 <Divider></Divider>
