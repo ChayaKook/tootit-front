@@ -5,7 +5,7 @@ export interface OrderModel {
       phone: string,
       email: string
     };
-    product: string;
+    product: {_id:string, name:string};
     quantity: number;
     totalSum: number;
     status: string;

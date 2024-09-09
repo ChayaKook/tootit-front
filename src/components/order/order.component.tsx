@@ -25,9 +25,9 @@ const Order: React.FC = () => {
             phone: "cohen",
             email: "gc987789@gmail.com"
         },
-        product: product._id,
-        quantity: 10,
-        totalSum: 0,
+        product: {_id:product._id, name:product.name},
+        quantity: 1,
+        totalSum: product.totalSum,
         status: "נשלח לטיפול",
         date: new Date(Date.now()),
         note: "VXV"
@@ -220,7 +220,7 @@ const Order: React.FC = () => {
                     <div className="p-field">
                         <label htmlFor="quantity">כמות:</label>
                         <br />
-                        <InputNumber id="quantity" value={order.quantity} onChange={(e) => calculateSum(e, 'quantity')} />
+                        <InputNumber min={1}  id="quantity" value={order.quantity} onChange={(e) => calculateSum(e, 'quantity')} />
                     </div>
                     <div className="p-field">
                         <label htmlFor="totalSum">סכום כולל:</label>

@@ -43,7 +43,7 @@ const ProductService = {
     }
   },
 
-  createProduct: async (product: ProductModel): Promise<ProductModel | any> => {
+  addProduct: async (product: ProductModel): Promise<ProductModel | any> => {
     const token = localStorage.getItem('token');
     const headers = {
       'Authorization': `Bearer ${token}`,

@@ -29,14 +29,14 @@ const ProductsList: React.FC = () => {
         window.print()
     }
 
-    const onRowEditComplete = (rowData: OrderModel|any) => {
+    const onRowEditComplete = (rowData: OrderModel | any) => {
         ProductService.updateProduct(rowData).then((updatedProduct) => {
             const updatePproduct = products.map(p => p._id === updatedProduct._id ? updatedProduct : p);
             setProducts(updatePproduct);
             showSuccess();
         }).catch((error) => {
             showError();
-            console.log(error);           
+            console.log(error);
         });
     };
 
@@ -55,21 +55,32 @@ const ProductsList: React.FC = () => {
         }
     }
 
-    const addProduct = (product:ProductModel) => {}
+    const addProduct = async(product: ProductModel) => {
+        try {
+            delete product._id
+            const newProduct = await ProductService.addProduct(product);
+            setProducts([...products, newProduct]);
+            showSuccess()
+            return newProduct;
+        } catch (error) {
+            console.log(error);
+            showError()
+        }
+    }
 
     const columns = [
-        { field: '_id', header: 'מזהה מוצר', type:'text',sort:false   },
-        { field: 'name', header: 'שם', type:'text',sort:true   },
-        { field: 'description', header: 'תיאור', type:'text',sort:false   },
-        { field: 'image', header: 'תמונה', type:'text',sort:false   },
-        { field: 'price', header: 'מחיר', type:'number',sort:true   },
-        { field: 'category', header: 'קטגוריה', type:'text',sort:true   },
+        { field: '_id', header: 'מזהה מוצר', type: 'text', sort: false },
+        { field: 'name', header: 'שם', type: 'text', sort: true },
+        { field: 'description', header: 'תיאור', type: 'text', sort: false },
+        { field: 'image', header: 'תמונה', type: 'text', sort: false },
+        { field: 'price', header: 'מחיר', type: 'number', sort: true },
+        { field: 'category', header: 'קטגוריה', type: 'text', sort: true },
         // { field: 'inventoryStatus', header: 'סטטוס מלאי', type:'text',sort:true   },
 
     ];
 
     return (
-        <div style={{ direction: "rtl", textAlign: "right", marginTop:"10px" }}>
+        <div style={{ direction: "rtl", textAlign: "right", marginTop: "10px" }}>
             <Toast ref={toast} />
 
             {products.length > 0 ? (
