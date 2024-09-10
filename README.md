@@ -1,13 +1,13 @@
-# React Site for Node.js Server
+# React Site for Node.ts Server
 
 This project is a React website designed to interact with a Node.js server. It includes components for both admin and regular user functionalities, styled using PrimeReact for a modern look and feel.
 
 ## Project Structure
 - `/src/components`
-  - `Home.jsx`: Component displaying business details like name, logo, address, and phone number.
-  - `AdminLogin.jsx`: Component for admin login with username and password inputs.
-  - `AdminDashboard.jsx`: Component for admin dashboard with sections for service, order, and customer details.
-  - `UserDashboard.jsx`: Component for user dashboard with sections for placing an order.
+  - `Home.tsx`: Component displaying business details like name, logo, address, and phone number.
+  - `Login.tsx`: Component for admin login with username and password inputs.
+  - `AdminDashboard.tsx`: Component for admin dashboard with sections for service, order, and customer details.
+  - `UserDashboard.tsx`: Component for user dashboard with sections for placing an order.
 
 ## Dependencies
 - [PrimeReact](https://www.primefaces.org/primereact/): UI components library.
